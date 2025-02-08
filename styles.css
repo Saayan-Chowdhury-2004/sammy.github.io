@@ -1,90 +1,146 @@
-/* General Page Styling */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-image: url('japan-background.jpg'); /* Use your image */
-    background-size: cover; /* Ensures the image covers the entire page */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-image: url('japan.jpg'); /* Add a background image */
+    background-size: cover;
+    background-position: center;
     position: relative;
-}
-
-/* Header Styling */
-.header {
-    background-color: #ff4c8e;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* White translucent filter */
+    z-index: -1;
+  }
+  
+  /* Header Section */
+  .header {
+    background-color: #4CAF50;
     color: white;
-    text-align: center;
     padding: 20px;
-    border-radius: 10px;
+    text-align: center;
+    border-bottom: 5px solid #388E3C;
     margin-bottom: 20px;
-}
-
-/* Paragraph Styling */
-.description {
-    font-size: 18px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Paragraph Section */
+  .description {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .description p {
+    font-family: 'Georgia', serif;
     color: #333;
     text-align: justify;
     line-height: 1.6;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
-}
-
-/* Table Styling */
-.travel-table {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Section */
+  .table-container {
+    margin: 20px auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
-}
-
-.travel-table th, .travel-table td {
-    border: 1px solid #ddd;
+  }
+  
+  table th, table td {
     padding: 12px;
     text-align: left;
-}
-
-.travel-table th {
-    background-color: #ff4c8e;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #4CAF50;
     color: white;
-}
-
-.travel-table tr:nth-child(even) {
+    font-weight: bold;
+  }
+  
+  table tr:nth-child(even) {
     background-color: #f9f9f9;
-}
-
-.travel-table tr:hover {
-    background-color: #ff8ab5;
-    cursor: pointer;
-}
-
-/* Lists Styling */
-.lists {
-    margin-top: 20px;
-}
-
-h2 {
-    color: #ff4c8e;
-}
-
-/* Unordered List */
-.things-to-do {
-    list-style-type: circle;
-    padding-left: 20px;
-}
-
-.things-to-do li {
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Bullet Point Section */
+  .lists-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .unordered-list, .ordered-list {
+    width: 45%;
+  }
+  
+  .unordered-list h2, .ordered-list h2 {
+    color: #4CAF50;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .unordered-list ul, .ordered-list ol {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .unordered-list ul li, .ordered-list ol li {
+    padding: 8px;
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4CAF50;
     color: #333;
-    margin-bottom: 8px;
-}
-
-/* Ordered List */
-.top-attractions {
-    list-style-type: decimal;
-    padding-left: 20px;
-}
-
-.top-attractions li {
-    color: #333;
-    margin-bottom: 8px;
-}
+    transition: background-color 0.3s ease;
+  }
+  
+  .unordered-list ul li:hover, .ordered-list ol li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .ordered-list ol {
+    counter-reset: item;
+  }
+  
+  .ordered-list ol li {
+    counter-increment: item;
+  }
+  
+  .ordered-list ol li::before {
+    content: counter(item) ".";
+    font-weight: bold;
+    margin-right: 10px;
+    color: #4CAF50;
+  }  
